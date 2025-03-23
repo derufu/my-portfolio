@@ -1,15 +1,3 @@
-[<img src="https://github.com/user-attachments/assets/60e89805-26fd-4074-8ced-447fb148c7e6">](http://supersaas.dev?ref=github)
-
-
-# Zooper
-
-Zooper is a beautiful personal portfolio template for developers, programmers, freelancers and designers.
-
-![Zooper template home preview](https://zooper.pages.dev/preview.jpg)
-
-
-## Features
-
 Full features blog 📝.
 CMS ready 🚀.
 Super fast ⚡.
