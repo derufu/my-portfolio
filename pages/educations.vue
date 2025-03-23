@@ -1,6 +1,6 @@
 <template>
   <main class="min-h-screen">
-    <AppHeader class="mb-12" title="Education" :education="education" />
+    <AppHeader class="mb-12" title="Education" :description="description" />
     <div class="space-y-4">
       <AppEducationCard
         v-for="(education, id) in educations"

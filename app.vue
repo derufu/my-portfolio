@@ -1,6 +1,6 @@
 <template>
   <NuxtLoadingIndicator color="#14b8a6" />
-  <!-- <AppNavbar /> -->
+  <AppNavbar />
   <div class="h-32"></div>
   <UContainer>
     <NuxtPage />
