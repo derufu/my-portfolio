@@ -5,7 +5,7 @@
   <UContainer>
     <NuxtPage />
   </UContainer>
-  <div class="h-32"></div>s
+  <div class="h-32"></div>
   <AppFooter />
 </template>
 
