@@ -2,8 +2,8 @@
   "name": "DAVAO MEDICAL SCHOOL FOUNDATION",
   "year": "2020-2025",
   "url": "https://www.dmsf.ph/",
-  "description": "IT SPECIALIST",
+  "position": "IT SPECIALIST",
+  "description": "I am responsible for the maintenance and repair of the computer and network of the school. Maintaining the school equipment and software, assist the teachers on their needs.",
   "thumbnail": "/projects/dmsf.png",
-  "status": "Active",
-  "opensource": true
+  "status": "Active"
 }

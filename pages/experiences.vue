@@ -13,12 +13,13 @@
 
 <script setup>
 const description =
-  "I’ve worked on tons of little experiences over the years but these are the ones that I’m most proud of. Many of them are open-source, so if you see something that piques your interest, check out the code and contribute if you have ideas for how it can be improved.";
-useSeoMeta({
-  title: "experiences | Delf Boston",
-  description,
-});
-
+  "These are some of the company I've had the pleasure of working on.";
+  useSeoMeta({
+  title: 'Experiences | Delf Boston',
+  ogTitle: 'Delf Boston',
+  ogImage: '/public/projects/DELF.png',
+  twitterCard: 'summary_large_image',
+})
 const { data: experiences } = await useAsyncData("experiences-all", () =>
   queryContent("/experiences").find()
 );

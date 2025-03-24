@@ -2,7 +2,7 @@
   "name": "CITY GOVERNMENT OF SAMAL",
   "year": "2022-2025",
   "url": "https://www.sti.edu/",
-  "description": "WEB DEVELOPER, AND IT SUPPORT",
-  "thumbnail": "/projects/samal.png",
-  "status": "DONE"
+  "position": "WEB DEVELOPER, AND IT SUPPORT",
+  "description": "I developed the website for the sangguniang panglungsod ng samal, on their ordinance and resolution system. also repair and maintain the computer and network of the office.",
+  "thumbnail": "/projects/samal.png"
 }

@@ -1,0 +1,7 @@
+{
+  "name": "Email Documents Tracking System",
+  "url": "https://elsg.jayquitain.online/",
+  "description": "Tracking of Email Documents for DSWD Davao City. This system is used to track the documents that are sent to the office through email. The system will automatically generate a reference number for the document and will be used to track the status of the document.",
+  "thumbnail": "/projects/dswd.png",
+  "status": "Active"
+}

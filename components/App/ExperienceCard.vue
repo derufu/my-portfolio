@@ -9,6 +9,8 @@
       <h3 class="text-sm font-medium group-hover:text-primary-600">
         {{ experience.name }}
       </h3>
+      <p class="text-gray-400 text-sm mt-1 italic">{{ experience.position }}</p>
+      <p class="text-gray-400 text-sm mb-1 italic">{{ experience.year }}</p>
       <p class="text-gray-400 text-sm">{{ experience.description }}</p>
     </div>
     <div

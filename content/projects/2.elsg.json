@@ -1,7 +1,7 @@
 {
   "name": "Employee-Log-Sheet-Generator",
   "url": "https://elsg.jayquitain.online/",
-  "description": "Modern news reader in tweetdeck style",
+  "description": "Generate employee log sheet for the Vice Mayor's Office",
   "thumbnail": "/projects/SP.png",
   "status": "Active"
 }
