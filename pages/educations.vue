@@ -13,7 +13,7 @@
 
 <script setup>
 const description =
-  "I have a degree in Computer Science and have completed various courses and certifications in web development, programming, and design.";
+  "";
 useSeoMeta({
   title: "Educations | Delf Boston",
   description,
