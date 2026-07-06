@@ -8,6 +8,11 @@ export default defineAppConfig({
     channelUrl: "",
     facebookUrl: "https://www.facebook.com/projectdoctrack",
     thumbnail: "",
+    // Optional curated choices. Leave empty to auto-load every video from the
+    // playlist above (the player reads it live via the YouTube IFrame API).
+    // To hand-pick / caption videos, add YouTube URLs or 11-char IDs here,
+    // e.g. ["https://youtu.be/abc123XYZ90", "def456UVW12"].
+    videos: [] as string[],
   },
   ui: {
     primary: "teal",
