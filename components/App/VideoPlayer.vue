@@ -20,9 +20,18 @@
       class="relative w-full overflow-hidden rounded-xl bg-black shadow-zoop ring-1 ring-gray-200 dark:shadow-zoopdark dark:ring-white/10"
       style="aspect-ratio: 16 / 9"
     >
-      <div v-show="activated" class="absolute inset-0 h-full w-full">
-        <div ref="playerEl" class="h-full w-full"></div>
-      </div>
+      <iframe
+        v-if="activated"
+        ref="playerEl"
+        :src="embedSrc"
+        title="YouTube video player"
+        class="absolute inset-0 h-full w-full"
+        frameborder="0"
+        loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
 
       <button
         v-if="!activated"
@@ -129,11 +138,41 @@ let poll = null;
 let didAutoStart = false;
 let pendingIndex = null;
 
+const origin = ref("");
+onMounted(() => {
+  origin.value = window.location.origin;
+});
+
 const playlistId = computed(() => {
   const raw = (video?.playlistId || "").trim();
   if (!raw) return "";
   const match = raw.match(/[?&]list=([^&]+)/);
   return match ? match[1] : raw;
+});
+
+// Builds the exact YouTube embed URL (the same one YouTube's Share → Embed
+// dialog produces, including the optional `si` share token) and enables the
+// JS API so the choices rail + shuffle can drive it.
+const embedSrc = computed(() => {
+  const params = new URLSearchParams({
+    enablejsapi: "1",
+    autoplay: "1",
+    rel: "0",
+    modestbranding: "1",
+    playsinline: "1",
+  });
+  if (origin.value) params.set("origin", origin.value);
+
+  if (configuredIds.value.length) {
+    const [first, ...rest] = configuredIds.value;
+    if (rest.length) params.set("playlist", rest.join(","));
+    return `https://www.youtube.com/embed/${first}?${params.toString()}`;
+  }
+
+  params.set("list", playlistId.value);
+  const si = (video?.playlistSi || "").trim();
+  if (si) params.set("si", si);
+  return `https://www.youtube.com/embed/videoseries?${params.toString()}`;
 });
 
 function extractVideoId(input) {
@@ -191,30 +230,14 @@ async function activate(index = null) {
   await nextTick();
   const YT = await loadYouTubeApi();
 
-  const playerVars = {
-    autoplay: 1,
-    rel: 0,
-    modestbranding: 1,
-    playsinline: 1,
-  };
-  if (!configuredIds.value.length && playlistId.value) {
-    playerVars.listType = "playlist";
-    playerVars.list = playlistId.value;
-  }
-
+  // Attach the Player API to the exact embed iframe rendered above.
   player = new YT.Player(playerEl.value, {
-    width: "100%",
-    height: "100%",
-    playerVars,
     events: { onReady, onStateChange },
   });
 }
 
 function onReady(event) {
   player = event.target;
-  if (configuredIds.value.length) {
-    player.loadPlaylist({ playlist: configuredIds.value });
-  }
   startPoll();
 }
 

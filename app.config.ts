@@ -5,6 +5,8 @@ export default defineAppConfig({
   // automatically without having to list them one by one.
   video: {
     playlistId: "https://www.youtube.com/playlist?list=PLUvMn7DSsEnw",
+    // Optional share token from YouTube's "Share → Embed" URL (?si=...).
+    playlistSi: "WiObaUfKgMcfS_Pm",
     channelUrl: "",
     facebookUrl: "https://www.facebook.com/projectdoctrack",
     thumbnail: "",
