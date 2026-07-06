@@ -1,4 +1,13 @@
 export default defineAppConfig({
+  // Video editing showcase. Paste your YouTube playlist URL or ID into
+  // `playlistId` (e.g. "https://www.youtube.com/playlist?list=PLxxxx" or "PLxxxx").
+  // The Videos tab embeds the whole playlist, so every video in it shows up
+  // automatically without having to list them one by one.
+  video: {
+    playlistId: "https://www.youtube.com/playlist?list=PLUvMn7DSsEnw",
+    channelUrl: "",
+    thumbnail: "",
+  },
   ui: {
     primary: "teal",
     gray: "neutral",
