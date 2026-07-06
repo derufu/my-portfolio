@@ -44,6 +44,11 @@ const links = [
     url: "/videos",
     icon: "mdi:youtube",
   },
+  {
+    name: "Facebook (Project DocTrack)",
+    url: "https://www.facebook.com/projectdoctrack",
+    icon: "mdi:facebook",
+  },
   // {
   //   name: "OnlineJobs.ph",
   //   url: "https://www.onlinejobs.ph/jobseekers/info/2645366",

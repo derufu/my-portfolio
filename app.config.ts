@@ -6,6 +6,7 @@ export default defineAppConfig({
   video: {
     playlistId: "https://www.youtube.com/playlist?list=PLUvMn7DSsEnw",
     channelUrl: "",
+    facebookUrl: "https://www.facebook.com/projectdoctrack",
     thumbnail: "",
   },
   ui: {
