@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h2 class="uppercase text-xs font-semibold text-gray-400 mb-4">FIND ME ON</h2>
+  <section>
+    <HomeSectionHeading>Let's connect</HomeSectionHeading>
     <div class="space-y-5">
       <NuxtLink
         v-for="link in links"
@@ -19,7 +19,7 @@
         <Icon :name="link.icon" class="w-6 h-6"></Icon>
       </NuxtLink>
     </div>
-  </div>
+  </section>
 </template>
 
 <script lang="ts" setup>
@@ -38,6 +38,11 @@ const links = [
     name: "Linkedin",
     url: "https://www.linkedin.com/in/delfcarlboston/",
     icon: "mdi:linkedin",
+  },
+  {
+    name: "YouTube",
+    url: "/videos",
+    icon: "mdi:youtube",
   },
   // {
   //   name: "OnlineJobs.ph",
