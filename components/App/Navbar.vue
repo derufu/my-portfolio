@@ -37,7 +37,7 @@
 </template>
 
 <script setup>
-import { useFixedHeader } from 'vue-use-fixed-header'
+import { useFixedHeader } from "vue-use-fixed-header";
 const headerRef = ref(null);
 const { styles } = useFixedHeader(headerRef);
 
@@ -57,6 +57,11 @@ const items = [
     name: "Education",
     path: "/educations",
     icon: "heroicons-solid:academic-cap",
+  },
+  {
+    name: "Video Editing",
+    path: "/videos",
+    icon: "mdi:youtube",
   },
   // {
   //   name: "Articles",
