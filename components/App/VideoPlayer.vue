@@ -17,7 +17,8 @@
 
   <div
     v-else
-    class="relative aspect-video w-full overflow-hidden rounded-xl bg-black shadow-zoop ring-1 ring-gray-200 dark:shadow-zoopdark dark:ring-white/10"
+    class="relative w-full overflow-hidden rounded-xl bg-black shadow-zoop ring-1 ring-gray-200 dark:shadow-zoopdark dark:ring-white/10"
+    style="aspect-ratio: 16 / 9"
   >
     <iframe
       v-if="activated"
