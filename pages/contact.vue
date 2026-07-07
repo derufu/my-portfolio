@@ -42,6 +42,7 @@
           size="lg"
           placeholder="Jane Doe"
           icon="heroicons:user"
+          :maxlength="100"
         />
       </UFormGroup>
 
@@ -52,6 +53,7 @@
           size="lg"
           placeholder="you@example.com"
           icon="heroicons:envelope"
+          :maxlength="200"
         />
       </UFormGroup>
 
@@ -60,6 +62,7 @@
           v-model="state.message"
           :rows="6"
           size="lg"
+          :maxlength="5000"
           placeholder="Tell me about your project, video edit, or anything you'd like to collaborate on…"
         />
       </UFormGroup>
@@ -169,9 +172,10 @@ async function onSubmit() {
     });
     status.value = "success";
   } catch (err) {
+    const code = err?.statusCode || err?.response?.status;
     // If the server hasn't been configured with Gmail creds yet (503),
     // fall back to the no-backend relay so the form still works.
-    if (err?.statusCode === 503 || err?.response?.status === 503) {
+    if (code === 503) {
       try {
         await sendViaRelay();
         status.value = "success";
@@ -182,7 +186,9 @@ async function onSubmit() {
     }
     status.value = "error";
     errorMessage.value =
-      "Sorry, your message couldn't be sent right now. Please try again.";
+      code === 429
+        ? "You're sending messages too quickly. Please wait a moment and try again."
+        : "Sorry, your message couldn't be sent right now. Please try again.";
   }
 }
 
