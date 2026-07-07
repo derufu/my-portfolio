@@ -12,14 +12,17 @@
 </template>
 
 <script setup>
-const description =
-  "These are some of the company I've had the pleasure of working on.";
-  useSeoMeta({
-  title: 'Experiences | Delf Boston',
-  ogTitle: 'Delf Boston',
-  ogImage: '/public/projects/DELF.png',
-  twitterCard: 'summary_large_image',
-})
+import { brandedDescription, pageTitle } from "~/utils/site";
+
+const description = brandedDescription(
+  "Professional experience of Delf Boston — web development, IT, and network management roles across government, BPO, and education sectors in Davao City.",
+);
+
+usePageSeo({
+  title: pageTitle("Experience"),
+  description,
+});
+
 const { data: experiences } = await useAsyncData("experiences-all", () =>
   queryContent("/experiences").find()
 );

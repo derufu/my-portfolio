@@ -30,74 +30,52 @@
 <script setup>
 import {
   SITE_DESCRIPTION,
-  SITE_IMAGE,
   SITE_KEYWORDS,
-  SITE_NAME,
-  SITE_SOCIALS,
+  SITE_OG_IMAGE,
   SITE_TITLE,
   SITE_URL,
+  personSchema,
+  profilePageSchema,
+  websiteSchema,
 } from "~/utils/site";
 
-const personSchema = {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  name: "Delf Carl Boston",
-  alternateName: ["Delf Boston", "Delfincarlos Boston"],
-  url: SITE_URL,
-  image: SITE_IMAGE,
-  jobTitle: "Web Developer & Video Editor",
-  description: SITE_DESCRIPTION,
-  sameAs: SITE_SOCIALS,
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Davao City",
-    addressCountry: "PH",
-  },
-};
-
-const websiteSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  name: SITE_NAME,
-  alternateName: ["Delf Carl Boston", "Delf Boston Portfolio"],
-  url: SITE_URL,
-  description: SITE_DESCRIPTION,
-  inLanguage: "en",
-  author: {
-    "@type": "Person",
-    name: "Delf Carl Boston",
-    alternateName: "Delf Boston",
-  },
-};
-
 useHead({
-  title: SITE_TITLE,
   titleTemplate: "%s",
   meta: [
     { name: "description", content: SITE_DESCRIPTION },
     { name: "keywords", content: SITE_KEYWORDS },
     { name: "author", content: "Delf Carl Boston" },
-    { name: "robots", content: "index, follow" },
+    { name: "creator", content: "Delf Carl Boston" },
+    { name: "publisher", content: "Delf Boston" },
+    { name: "application-name", content: "Delf Boston Portfolio" },
+    { name: "geo.region", content: "PH-11" },
+    { name: "geo.placename", content: "Davao City" },
+    { name: "theme-color", content: "#14b8a6" },
     { property: "og:type", content: "website" },
-    { property: "og:site_name", content: SITE_NAME },
+    { property: "og:site_name", content: "Delf Boston" },
+    { property: "og:locale", content: "en_PH" },
     { property: "og:title", content: SITE_TITLE },
     { property: "og:description", content: SITE_DESCRIPTION },
-    { property: "og:image", content: SITE_IMAGE },
+    { property: "og:image", content: SITE_OG_IMAGE },
     { property: "og:url", content: SITE_URL },
     { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:creator", content: "@im.delfincarlos" },
     { name: "twitter:title", content: SITE_TITLE },
     { name: "twitter:description", content: SITE_DESCRIPTION },
-    { name: "twitter:image", content: SITE_IMAGE },
+    { name: "twitter:image", content: SITE_OG_IMAGE },
   ],
-  link: [{ rel: "canonical", href: SITE_URL }],
   script: [
     {
       type: "application/ld+json",
-      children: JSON.stringify(personSchema),
+      children: JSON.stringify(personSchema()),
     },
     {
       type: "application/ld+json",
-      children: JSON.stringify(websiteSchema),
+      children: JSON.stringify(websiteSchema()),
+    },
+    {
+      type: "application/ld+json",
+      children: JSON.stringify(profilePageSchema()),
     },
   ],
 });

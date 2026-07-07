@@ -27,11 +27,16 @@
 </template>
 
 <script setup>
-const description =
-  "Awesome things I've found on the internet. This page is still WIP, I want to add search like bmrks.com";
-useSeoMeta({
-  title: "Bookmarks | Fayaz Ahmed",
+import { brandedDescription, pageTitle } from "~/utils/site";
+
+const description = brandedDescription(
+  "Curated bookmarks and useful web resources collected by Delf Boston.",
+);
+
+usePageSeo({
+  title: pageTitle("Bookmarks"),
   description,
+  noindex: true,
 });
 
 const bookmarks = [

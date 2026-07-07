@@ -27,12 +27,18 @@
 </template>
 
 <script setup>
-const description =
-  "Software I use, gadgets I love, and other things I recommend. Here’s a big list of all of my favorite stuff.";
-useSeoMeta({
-  title: "Things I use | Fayaz Ahmed",
+import { brandedDescription, pageTitle } from "~/utils/site";
+
+const description = brandedDescription(
+  "Tools, gadgets, and software used by Delf Carl Boston for web development and video editing.",
+);
+
+usePageSeo({
+  title: pageTitle("Things I Use"),
   description,
+  noindex: true,
 });
+
 const { data: items } = await useAsyncData("uses", () =>
   queryContent("/uses").find()
 );

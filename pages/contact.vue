@@ -109,16 +109,19 @@
 </template>
 
 <script setup>
+import { brandedDescription, pageTitle } from "~/utils/site";
+
 const { contact } = useAppConfig();
 const email = contact?.email || "delf.boston@gmail.com";
 const relayEndpoint =
   contact?.formEndpoint || `https://formsubmit.co/ajax/${email}`;
 
-const description =
-  "Have a project, a video to edit, or just want to say hi? Drop your email and a message and it'll land straight in my inbox.";
+const description = brandedDescription(
+  "Contact Delf Boston for web development, video editing, freelance work, or collaborations. Send a message directly from this page.",
+);
 
-useSeoMeta({
-  title: "Contact | Delf Boston",
+usePageSeo({
+  title: pageTitle("Contact"),
   description,
 });
 

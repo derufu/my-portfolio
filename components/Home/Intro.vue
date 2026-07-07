@@ -14,7 +14,7 @@
         <NuxtImg
           preset="cover"
           src="/projects/DELF.png"
-          alt="Delf Boston"
+          alt="Delf Carl Boston — Delf Boston, web developer and video editor"
           class="h-28 w-28 rounded-full border border-gray-300 bg-white object-cover ring-2 ring-gray-200 transition-all duration-300 hover:ring-4 dark:border-gray-800 dark:bg-gray-900 dark:ring-white/10"
         />
         <span
@@ -39,6 +39,10 @@
         Hi, I'm Delf Boston
       </h1>
 
+      <p class="mt-2 text-sm font-medium text-gray-500 dark:text-gray-400">
+        Delf Carl Boston · Web Developer &amp; Video Editor
+      </p>
+
       <p class="mt-3 text-lg font-semibold">
         <span
           class="bg-gradient-to-r from-primary-500 to-cyan-400 bg-clip-text text-transparent"
@@ -54,8 +58,9 @@
       </p>
 
       <p class="mt-5 max-w-xl text-gray-600 dark:text-gray-400">
-        I build fast, delightful web apps with Vue, Nuxt, Laravel &amp; Node —
-        and craft story-driven videos with clean cuts, motion graphics, and
+        I'm Delf Carl Boston — known professionally as Delf Boston — building
+        fast, delightful web apps with Vue, Nuxt, Laravel &amp; Node, and
+        crafting story-driven videos with clean cuts, motion graphics, and
         color. Based in Davao City, Philippines, currently a web developer &amp;
         network manager at the City Government of Davao.
       </p>
@@ -96,28 +101,6 @@
 </template>
 
 <script setup>
-import {
-  SITE_DESCRIPTION,
-  SITE_IMAGE,
-  SITE_KEYWORDS,
-  SITE_TITLE,
-  SITE_URL,
-} from "~/utils/site";
-
-useSeoMeta({
-  title: SITE_TITLE,
-  description: SITE_DESCRIPTION,
-  keywords: SITE_KEYWORDS,
-  ogTitle: SITE_TITLE,
-  ogDescription: SITE_DESCRIPTION,
-  ogImage: SITE_IMAGE,
-  ogUrl: SITE_URL,
-  twitterCard: "summary_large_image",
-  twitterTitle: SITE_TITLE,
-  twitterDescription: SITE_DESCRIPTION,
-  twitterImage: SITE_IMAGE,
-});
-
 const socials = [
   { label: "GitHub", url: "https://github.com/derufu", icon: "mdi:github" },
   {

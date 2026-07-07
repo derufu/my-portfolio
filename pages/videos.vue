@@ -35,15 +35,18 @@
 </template>
 
 <script setup>
+import { brandedDescription, pageTitle } from "~/utils/site";
+
 const { video } = useAppConfig();
 const channelUrl = video?.channelUrl;
 const facebookUrl = video?.facebookUrl;
 
-const description =
-  "Beyond building software, I edit and produce videos. Here's a compilation of my video editing work — the playlist below is straight from YouTube, and I post most of my edits on the Project DocTrack Facebook page.";
+const description = brandedDescription(
+  "Video editing portfolio by Delf Carl Boston — story-driven edits, motion graphics, color grading, and reels compiled from YouTube and social media work.",
+);
 
-useSeoMeta({
-  title: "Video Editing | Delf Boston",
+usePageSeo({
+  title: pageTitle("Video Editing"),
   description,
 });
 </script>

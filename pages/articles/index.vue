@@ -10,10 +10,14 @@
 </template>
 
 <script setup>
-const description =
-  "All of my long-form thoughts on programming, user interfaces, product design, and more, collected in chronological order.";
-useSeoMeta({
-  title: "Articles | Fayaz Ahmed",
+import { brandedDescription, pageTitle } from "~/utils/site";
+
+const description = brandedDescription(
+  "Articles by Delf Boston on web development, programming, UI, and product design.",
+);
+
+usePageSeo({
+  title: pageTitle("Articles"),
   description,
 });
 

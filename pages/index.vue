@@ -11,3 +11,13 @@
     </div>
   </main>
 </template>
+
+<script setup>
+import { SITE_DESCRIPTION } from "~/utils/site";
+
+usePageSeo({
+  title: "",
+  description: SITE_DESCRIPTION,
+  path: "/",
+});
+</script>

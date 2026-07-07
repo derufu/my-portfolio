@@ -12,10 +12,14 @@
 </template>
 
 <script setup>
-const description =
-  "I’ve worked this projects over the years but these are the ones that I’m most proud of. Many of them are open-source, so if you see something that piques your interest, check out the code and contribute if you have ideas for how it can be improved.";
-useSeoMeta({
-  title: "Projects | Delf Boston",
+import { brandedDescription, pageTitle } from "~/utils/site";
+
+const description = brandedDescription(
+  "Web development projects by Delf Boston — Vue, Nuxt, Laravel, and full-stack apps built for government, education, and community organizations in the Philippines.",
+);
+
+usePageSeo({
+  title: pageTitle("Projects"),
   description,
 });
 

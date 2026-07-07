@@ -12,10 +12,14 @@
 </template>
 
 <script setup>
-const description =
-  "";
-useSeoMeta({
-  title: "Educations | Delf Boston",
+import { brandedDescription, pageTitle } from "~/utils/site";
+
+const description = brandedDescription(
+  "Education background of Delf Carl Boston — graduate studies and college training in information technology and related fields in the Philippines.",
+);
+
+usePageSeo({
+  title: pageTitle("Education"),
   description,
 });
 

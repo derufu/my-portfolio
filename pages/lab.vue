@@ -20,9 +20,15 @@
 </template>
 
 <script setup>
-const description = "Some random experiments with UI I do in my free time.";
-useSeoMeta({
-  title: "Lab | Fayaz Ahmed",
+import { brandedDescription, pageTitle } from "~/utils/site";
+
+const description = brandedDescription(
+  "UI experiments and creative coding projects by Delf Boston.",
+);
+
+usePageSeo({
+  title: pageTitle("Lab"),
   description,
+  noindex: true,
 });
 </script>

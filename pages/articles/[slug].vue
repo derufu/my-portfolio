@@ -12,15 +12,37 @@
     </div>
   </main>
 </template>
+
 <script setup>
+import { pageTitle } from "~/utils/site";
+
 const route = useRoute();
 const { slug } = route.params;
-useSeoMeta({
-  ogImage: `https://fayazahmed.com/articles/${slug}.png`,
-  twitterCard: "summary_large_image",
-  articleAuthor: "Fayaz Ahmed",
+
+const { data: doc } = await useAsyncData(`article-${slug}`, () =>
+  queryContent("/articles").where({ _path: `/articles/${slug}` }).findOne()
+);
+
+const title = doc.value?.title
+  ? pageTitle(doc.value.title)
+  : pageTitle("Article");
+
+const description =
+  doc.value?.description ||
+  `Article by Delf Carl Boston (Delf Boston) on web development and programming.`;
+
+usePageSeo({
+  title,
+  description,
+  path: `/articles/${slug}`,
+  type: "article",
+});
+
+useHead({
+  meta: [{ property: "article:author", content: "Delf Carl Boston" }],
 });
 </script>
+
 <style>
 .prose h2 a,
 .prose h3 a {
