@@ -3,6 +3,7 @@
     <div class="space-y-20">
       <HomeIntro />
       <HomeExpertise />
+      <HomeToolbox />
       <HomeFeaturedProjects />
       <HomeFeaturedVideo />
       <HomeEducation />

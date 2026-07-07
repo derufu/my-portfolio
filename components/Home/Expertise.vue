@@ -55,7 +55,7 @@ const areas = [
     description:
       "Designing and building responsive, performant web apps and sites end to end — from database to polished UI.",
     icon: "solar:code-square-outline",
-    tags: ["JavaScript", "Vue", "Nuxt", "Laravel", "Node"],
+    tags: ["Laravel", "Vue", "React", "PHP", "MySQL", "PostgreSQL"],
     cta: "See projects",
     to: "/projects",
     badge: "bg-gradient-to-br from-primary-500 to-cyan-500",
@@ -66,7 +66,7 @@ const areas = [
     description:
       "Cutting story-driven videos with clean pacing, motion graphics, sound design, and cinematic color grading.",
     icon: "solar:videocamera-record-outline",
-    tags: ["Premiere Pro", "After Effects", "Color Grading", "Motion Graphics"],
+    tags: ["After Effects", "Premiere Pro", "DaVinci Resolve", "CapCut"],
     cta: "Watch the reel",
     to: "/videos",
     badge: "bg-gradient-to-br from-fuchsia-500 to-rose-500",
