@@ -1,4 +1,4 @@
-export const SITE_URL = "https://delfboston.site";
+export const SITE_URL = "https://delfboston.online";
 
 export const SITE_NAME = "Delf Boston";
 
