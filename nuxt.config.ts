@@ -1,6 +1,14 @@
 export default defineNuxtConfig({
   devtools: { enabled: false },
   ssr: true,
+  runtimeConfig: {
+    // Set these as environment variables (locally in .env, and in Vercel
+    // Project Settings → Environment Variables). Nuxt maps NUXT_-prefixed vars
+    // automatically; the server route also accepts the unprefixed names.
+    gmailUser: "",
+    gmailAppPassword: "",
+    contactTo: "delf.boston@gmail.com",
+  },
   modules: [
     "@nuxt/ui",
     "nuxt-icon",

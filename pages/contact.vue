@@ -108,7 +108,8 @@
 <script setup>
 const { contact } = useAppConfig();
 const email = contact?.email || "delf.boston@gmail.com";
-const endpoint = contact?.formEndpoint || `https://formsubmit.co/ajax/${email}`;
+const relayEndpoint =
+  contact?.formEndpoint || `https://formsubmit.co/ajax/${email}`;
 
 const description =
   "Have a project, a video to edit, or just want to say hi? Drop your email and a message and it'll land straight in my inbox.";
@@ -136,25 +137,49 @@ function validate(data) {
   return errors;
 }
 
+async function sendViaRelay() {
+  await $fetch(relayEndpoint, {
+    method: "POST",
+    headers: { Accept: "application/json" },
+    body: {
+      name: state.name || "Anonymous",
+      email: state.email,
+      message: state.message,
+      _subject: `Portfolio contact from ${state.name || state.email}`,
+      _template: "table",
+      _captcha: "false",
+    },
+  });
+}
+
 async function onSubmit() {
   if (honey.value) return; // bot trap
   status.value = "submitting";
   errorMessage.value = "";
   try {
-    await $fetch(endpoint, {
+    // Primary: our server route (Gmail SMTP on Vercel).
+    await $fetch("/api/contact", {
       method: "POST",
-      headers: { Accept: "application/json" },
       body: {
-        name: state.name || "Anonymous",
+        name: state.name,
         email: state.email,
         message: state.message,
-        _subject: `Portfolio contact from ${state.name || state.email}`,
-        _template: "table",
-        _captcha: "false",
+        _honey: honey.value,
       },
     });
     status.value = "success";
-  } catch (e) {
+  } catch (err) {
+    // If the server hasn't been configured with Gmail creds yet (503),
+    // fall back to the no-backend relay so the form still works.
+    if (err?.statusCode === 503 || err?.response?.status === 503) {
+      try {
+        await sendViaRelay();
+        status.value = "success";
+        return;
+      } catch (_) {
+        /* fall through to error */
+      }
+    }
     status.value = "error";
     errorMessage.value =
       "Sorry, your message couldn't be sent right now. Please try again.";
