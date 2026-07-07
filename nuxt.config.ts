@@ -1,6 +1,14 @@
 export default defineNuxtConfig({
   devtools: { enabled: false },
   ssr: true,
+  runtimeConfig: {
+    // Set these as environment variables (locally in .env, and in Vercel
+    // Project Settings → Environment Variables). Nuxt maps NUXT_-prefixed vars
+    // automatically; the server route also accepts the unprefixed names.
+    gmailUser: "delf.boston@gmail.com",
+    gmailAppPassword: "",
+    contactTo: "delf.boston@gmail.com",
+  },
   modules: [
     "@nuxt/ui",
     "nuxt-icon",
@@ -9,7 +17,7 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "@nuxt/content",
     "@nuxthq/studio",
-    "@vueuse/nuxt"
+    "@vueuse/nuxt",
   ],
   ui: {
     icons: ["heroicons", "lucide"],
@@ -17,8 +25,12 @@ export default defineNuxtConfig({
   app: {
     pageTransition: { name: "page", mode: "out-in" },
     head: {
-      charset: 'utf-16',
-      viewport: 'width=device-width, initial-scale=1, maximum-scale=1',
+      charset: "utf-16",
+      viewport: "width=device-width, initial-scale=1, maximum-scale=1",
+      link: [
+        { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+        { rel: "mask-icon", href: "/favicon.svg", color: "#14b8a6" },
+      ],
       htmlAttrs: {
         lang: "en",
         class: "h-full",
@@ -43,12 +55,12 @@ export default defineNuxtConfig({
     presets: {
       cover: {
         modifiers: {
-          fit: 'cover',
-          format: 'jpg',
+          fit: "cover",
+          format: "jpg",
           width: 300,
-          height: 300
-        }
-      }
-    }
-  }
+          height: 300,
+        },
+      },
+    },
+  },
 });

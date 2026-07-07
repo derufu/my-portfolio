@@ -110,5 +110,15 @@ const socials = [
     icon: "mdi:linkedin",
   },
   { label: "YouTube", url: "/videos", icon: "mdi:youtube" },
+  {
+    label: "Facebook",
+    url: "https://www.facebook.com/projectdoctrack",
+    icon: "mdi:facebook",
+  },
+  {
+    label: "Instagram",
+    url: "https://www.instagram.com/im.delfincarlos/",
+    icon: "mdi:instagram",
+  },
 ];
 </script>

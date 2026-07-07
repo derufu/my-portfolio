@@ -5,8 +5,33 @@ export default defineAppConfig({
   // automatically without having to list them one by one.
   video: {
     playlistId: "https://www.youtube.com/playlist?list=PLUvMn7DSsEnw",
+    // Optional share token from YouTube's "Share → Embed" URL (?si=...).
+    playlistSi: "WiObaUfKgMcfS_Pm",
     channelUrl: "",
+    facebookUrl: "https://www.facebook.com/projectdoctrack",
+    // Facebook video/reel permalinks to embed on the Video Editing page.
+    facebookVideos: [
+      "https://www.facebook.com/reel/839613512364414/",
+      "https://www.facebook.com/projectdoctrack/videos/767740366143468/",
+      "https://www.facebook.com/reel/2054848261968283/",
+      "https://www.facebook.com/reel/1420216639468280/",
+      "https://www.facebook.com/reel/1541887477550351/",
+      "https://www.facebook.com/reel/1643772886704518/",
+    ] as (string | { href: string; orientation?: "portrait" | "landscape" })[],
     thumbnail: "",
+    // Optional curated choices. Leave empty to auto-load every video from the
+    // playlist above (the player reads it live via the YouTube IFrame API).
+    // To hand-pick / caption videos, add YouTube URLs or 11-char IDs here,
+    // e.g. ["https://youtu.be/abc123XYZ90", "def456UVW12"].
+    videos: [] as string[],
+  },
+  // Contact form. Messages are relayed to `email` via FormSubmit (no backend
+  // needed). After the first submission, confirm the activation email
+  // FormSubmit sends to that inbox. To hide the address from the page source,
+  // swap `formEndpoint` for your private hashed URL (https://formsubmit.co/ajax/<random-string>).
+  contact: {
+    email: "delf.boston@gmail.com",
+    formEndpoint: "https://formsubmit.co/ajax/delf.boston@gmail.com",
   },
   ui: {
     primary: "teal",

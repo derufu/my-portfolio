@@ -63,6 +63,11 @@ const items = [
     path: "/videos",
     icon: "mdi:youtube",
   },
+  {
+    name: "Contact",
+    path: "/contact",
+    icon: "solar:letter-outline",
+  },
   // {
   //   name: "Articles",
   //   path: "/articles",
