@@ -6,11 +6,12 @@
         Featured edits on Facebook
       </h3>
     </div>
-    <div class="grid grid-cols-2 gap-3 sm:grid-cols-3">
+    <!-- masonry so portrait (reel) and landscape videos each keep their own shape -->
+    <div class="columns-2 gap-3 sm:columns-3">
       <div
         v-for="(item, i) in items"
         :key="i"
-        class="overflow-hidden rounded-xl bg-black shadow-zoop ring-1 ring-gray-200 dark:shadow-zoopdark dark:ring-white/10"
+        class="mb-3 break-inside-avoid overflow-hidden rounded-xl bg-black shadow-zoop ring-1 ring-gray-200 dark:shadow-zoopdark dark:ring-white/10"
         :style="{ aspectRatio: item.portrait ? '9 / 16' : '16 / 9' }"
       >
         <iframe
@@ -44,10 +45,20 @@ function buildSrc(href, portrait) {
   return `https://www.facebook.com/plugins/video.php?${params.toString()}`;
 }
 
+// Each entry is either a permalink string or { href, orientation }.
+// Orientation defaults to portrait for reels and landscape otherwise, but can
+// be overridden per video.
+function normalize(entry) {
+  const href = typeof entry === "string" ? entry : entry?.href;
+  if (!href) return null;
+  const orientation = typeof entry === "object" ? entry.orientation : undefined;
+  const portrait = orientation
+    ? orientation === "portrait"
+    : /\/reel\//.test(href);
+  return { src: buildSrc(href, portrait), portrait };
+}
+
 const items = computed(() =>
-  (video?.facebookVideos || []).filter(Boolean).map((href) => {
-    const portrait = /\/reel\//.test(href);
-    return { src: buildSrc(href, portrait), portrait };
-  })
+  (video?.facebookVideos || []).map(normalize).filter(Boolean)
 );
 </script>

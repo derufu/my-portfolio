@@ -16,8 +16,8 @@ export default defineAppConfig({
       "https://www.facebook.com/reel/2054848261968283/",
       "https://www.facebook.com/reel/1420216639468280/",
       "https://www.facebook.com/reel/1541887477550351/",
-      "https://www.facebook.com/reel/1983145699302368/",
-    ] as string[],
+      "https://www.facebook.com/reel/1643772886704518/",
+    ] as (string | { href: string; orientation?: "portrait" | "landscape" })[],
     thumbnail: "",
     // Optional curated choices. Leave empty to auto-load every video from the
     // playlist above (the player reads it live via the YouTube IFrame API).
