@@ -48,6 +48,10 @@ useHead({
     { name: "creator", content: "Delf Carl Boston" },
     { name: "publisher", content: "Delf Boston" },
     { name: "application-name", content: "Delf Boston Portfolio" },
+    {
+      name: "google-site-verification",
+      content: "google271a59d4b9c24142",
+    },
     { name: "geo.region", content: "PH-11" },
     { name: "geo.placename", content: "Davao City" },
     { name: "theme-color", content: "#14b8a6" },
