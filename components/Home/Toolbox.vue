@@ -46,6 +46,7 @@ const groups = [
     tools: [
       { name: "After Effects", icon: "logos:adobe-after-effects" },
       { name: "Premiere Pro", icon: "logos:adobe-premiere" },
+      { name: "Photoshop", icon: "logos:adobe-photoshop" },
       {
         name: "DaVinci Resolve",
         icon: "simple-icons:davinciresolve",

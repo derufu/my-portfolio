@@ -29,6 +29,8 @@
         More edits on Facebook
       </UButton>
     </div>
+
+    <AppFacebookVideos class="mt-14" />
   </main>
 </template>
 

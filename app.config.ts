@@ -9,6 +9,15 @@ export default defineAppConfig({
     playlistSi: "WiObaUfKgMcfS_Pm",
     channelUrl: "",
     facebookUrl: "https://www.facebook.com/projectdoctrack",
+    // Facebook video/reel permalinks to embed on the Video Editing page.
+    facebookVideos: [
+      "https://www.facebook.com/reel/839613512364414/",
+      "https://www.facebook.com/projectdoctrack/videos/767740366143468/",
+      "https://www.facebook.com/reel/2054848261968283/",
+      "https://www.facebook.com/reel/1420216639468280/",
+      "https://www.facebook.com/reel/1541887477550351/",
+      "https://www.facebook.com/reel/1983145699302368/",
+    ] as string[],
     thumbnail: "",
     // Optional curated choices. Leave empty to auto-load every video from the
     // playlist above (the player reads it live via the YouTube IFrame API).
