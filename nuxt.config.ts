@@ -18,6 +18,7 @@ export default defineNuxtConfig({
     "@nuxt/content",
     "@nuxthq/studio",
     "@vueuse/nuxt",
+    "@vercel/analytics",
   ],
   ui: {
     icons: ["heroicons", "lucide"],
