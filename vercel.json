@@ -1,0 +1,17 @@
+{
+  "headers": [
+    {
+      "source": "/google271a59d4b9c24142.html",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/plain; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    }
+  ]
+}

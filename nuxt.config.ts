@@ -66,4 +66,12 @@ export default defineNuxtConfig({
       },
     },
   },
+  routeRules: {
+    "/google271a59d4b9c24142.html": {
+      prerender: true,
+      headers: {
+        "Content-Type": "text/plain; charset=utf-8",
+      },
+    },
+  },
 });
