@@ -25,6 +25,14 @@ export default defineAppConfig({
     // e.g. ["https://youtu.be/abc123XYZ90", "def456UVW12"].
     videos: [] as string[],
   },
+  // Contact form. Messages are relayed to `email` via FormSubmit (no backend
+  // needed). After the first submission, confirm the activation email
+  // FormSubmit sends to that inbox. To hide the address from the page source,
+  // swap `formEndpoint` for your private hashed URL (https://formsubmit.co/ajax/<random-string>).
+  contact: {
+    email: "delf.boston@gmail.com",
+    formEndpoint: "https://formsubmit.co/ajax/delf.boston@gmail.com",
+  },
   ui: {
     primary: "teal",
     gray: "neutral",

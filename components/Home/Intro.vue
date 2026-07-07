@@ -115,5 +115,10 @@ const socials = [
     url: "https://www.facebook.com/projectdoctrack",
     icon: "mdi:facebook",
   },
+  {
+    label: "Instagram",
+    url: "https://www.instagram.com/im.delfincarlos/",
+    icon: "mdi:instagram",
+  },
 ];
 </script>

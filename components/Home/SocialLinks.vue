@@ -49,6 +49,11 @@ const links = [
     url: "https://www.facebook.com/projectdoctrack",
     icon: "mdi:facebook",
   },
+  {
+    name: "Instagram",
+    url: "https://www.instagram.com/im.delfincarlos/",
+    icon: "mdi:instagram",
+  },
   // {
   //   name: "OnlineJobs.ph",
   //   url: "https://www.onlinejobs.ph/jobseekers/info/2645366",
