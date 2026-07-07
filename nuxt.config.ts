@@ -5,7 +5,7 @@ export default defineNuxtConfig({
     // Set these as environment variables (locally in .env, and in Vercel
     // Project Settings → Environment Variables). Nuxt maps NUXT_-prefixed vars
     // automatically; the server route also accepts the unprefixed names.
-    gmailUser: "",
+    gmailUser: "delf.boston@gmail.com",
     gmailAppPassword: "",
     contactTo: "delf.boston@gmail.com",
   },
