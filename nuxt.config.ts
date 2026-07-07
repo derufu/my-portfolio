@@ -18,6 +18,7 @@ export default defineNuxtConfig({
     "@nuxt/content",
     "@nuxthq/studio",
     "@vueuse/nuxt",
+    "@vercel/analytics",
   ],
   ui: {
     icons: ["heroicons", "lucide"],
@@ -25,10 +26,12 @@ export default defineNuxtConfig({
   app: {
     pageTransition: { name: "page", mode: "out-in" },
     head: {
-      charset: "utf-16",
+      charset: "utf-8",
       viewport: "width=device-width, initial-scale=1, maximum-scale=1",
       link: [
+        { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
         { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+        { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
         { rel: "mask-icon", href: "/favicon.svg", color: "#14b8a6" },
       ],
       htmlAttrs: {

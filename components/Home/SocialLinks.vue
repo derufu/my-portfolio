@@ -45,6 +45,11 @@ const links = [
     icon: "mdi:youtube",
   },
   {
+    name: "Facebook",
+    url: "https://www.facebook.com/delfcarlboston",
+    icon: "mdi:facebook",
+  },
+  {
     name: "Instagram",
     url: "https://www.instagram.com/im.delfincarlos/",
     icon: "mdi:instagram",

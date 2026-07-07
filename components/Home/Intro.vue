@@ -96,10 +96,26 @@
 </template>
 
 <script setup>
+import {
+  SITE_DESCRIPTION,
+  SITE_IMAGE,
+  SITE_KEYWORDS,
+  SITE_TITLE,
+  SITE_URL,
+} from "~/utils/site";
+
 useSeoMeta({
-  title: "Delf Boston — Web Developer & Video Editor",
-  description:
-    "Delf Boston is a web developer and video editor from Davao City, Philippines, building web apps with Vue, Nuxt, Laravel & Node and editing story-driven videos.",
+  title: SITE_TITLE,
+  description: SITE_DESCRIPTION,
+  keywords: SITE_KEYWORDS,
+  ogTitle: SITE_TITLE,
+  ogDescription: SITE_DESCRIPTION,
+  ogImage: SITE_IMAGE,
+  ogUrl: SITE_URL,
+  twitterCard: "summary_large_image",
+  twitterTitle: SITE_TITLE,
+  twitterDescription: SITE_DESCRIPTION,
+  twitterImage: SITE_IMAGE,
 });
 
 const socials = [
@@ -110,11 +126,6 @@ const socials = [
     icon: "mdi:linkedin",
   },
   { label: "YouTube", url: "/videos", icon: "mdi:youtube" },
-  {
-    label: "Facebook",
-    url: "https://www.facebook.com/projectdoctrack",
-    icon: "mdi:facebook",
-  },
   {
     label: "Instagram",
     url: "https://www.instagram.com/im.delfincarlos/",
